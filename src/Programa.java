@@ -19,13 +19,13 @@ public class Programa {
 			leitor = new Leitor("expressoes.txt");
 			escritor = new Escritor("resultados.txt");
 			String linhaAtual = leitor.leProximaLinha();
+
 			while(linhaAtual != null) {
 				Pilha pilha = new Pilha();
 				boolean erro = false;
-				linhaAtual = linhaAtual.replaceAll("\\[", "(").replaceAll("\\]", ")").replaceAll("\\{","(").replaceAll("\\}",")");
-
 				String expressao1=verificarBalanceado(linhaAtual);
 				System.out.println(linhaAtual+ " " + expressao1+"\n");
+				linhaAtual = linhaAtual.replaceAll("\\[", "(").replaceAll("\\]", ")").replaceAll("\\{","(").replaceAll("\\}",")");
 
 				escritor.escreveProximaLinha("Expressao: " + linhaAtual);
 				String[] termos = linhaAtual.split(" ");
