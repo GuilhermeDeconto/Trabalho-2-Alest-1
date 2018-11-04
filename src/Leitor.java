@@ -18,6 +18,7 @@ public class Leitor {
 	
 	public String leProximaLinha() throws IOException {
 		return reader.readLine();
+
 	}
 	
 	public void fechaArquivo() throws IOException {
