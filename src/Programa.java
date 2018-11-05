@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.util.Stack;
 
 /*
- * Autores : Guilherme Deconto e Gustavo Possebon
+ * Autores : Guilherme Deconto
  */
 
 public class Programa {
@@ -16,7 +16,7 @@ public class Programa {
 		
 		//le expressoes, interpreta e guarda os resultados em um arquivo
 		try {
-			leitor = new Leitor("expressoes.txt");
+			leitor = new Leitor("expressoes2.txt");
 			escritor = new Escritor("resultados.txt");
 			String linhaAtual = leitor.leProximaLinha();
 
@@ -25,9 +25,10 @@ public class Programa {
 				boolean erro = false;
 				String expressao1=verificarBalanceado(linhaAtual);
 				System.out.println(linhaAtual+ " " + expressao1+"\n");
-				linhaAtual = linhaAtual.replaceAll("\\[", "(").replaceAll("\\]", ")").replaceAll("\\{","(").replaceAll("\\}",")");
 
+				linhaAtual = linhaAtual.replaceAll("\\[", "(").replaceAll("\\]", ")").replaceAll("\\{","(").replaceAll("\\}",")");
 				escritor.escreveProximaLinha("Expressao: " + linhaAtual);
+
 				String[] termos = linhaAtual.split(" ");
 				for(String proximoTermo : termos) {
 					if(proximoTermo.equals(")")) {
@@ -106,25 +107,25 @@ public class Programa {
 		}
 
 	}
-	public static String verificarBalanceado(String expr)
+	public static String verificarBalanceado(String expressao)
 	{
-		if (expr.isEmpty())
+		if (expressao.isEmpty())
 			return "Balanceado";
 
 		Stack<Character> stack = new Stack<Character>();
-		for (int i = 0; i < expr.length(); i++)
+		for (int i = 0; i < expressao.length(); i++)
 		{
-			char current = expr.charAt(i);
-			if (current == '{' || current == '(' || current == '[')
+			char atual = expressao.charAt(i);
+			if (atual == '{' || atual == '(' || atual == '[')
 			{
-				stack.push(current);
+				stack.push(atual);
 			}
-			if (current == '}' || current == ')' || current == ']')
+			if (atual == '}' || atual == ')' || atual == ']')
 			{
 				if (stack.isEmpty())
 					return "Nao Balanceado";
 				char last = stack.peek();
-				if (current == '}' && last == '{' || current == ')' && last == '(' || current == ']' && last == '[')
+				if (atual == '}' && last == '{' || atual == ')' && last == '(' || atual == ']' && last == '[')
 					stack.pop();
 				else
 					return "Nao Balanceado";

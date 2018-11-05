@@ -1,6 +1,6 @@
 
 /*
- * Autores : Guilherme Deconto e Gustavo Possebon
+ * Autores : Guilherme Deconto
  */
 
 public class Calculadora {

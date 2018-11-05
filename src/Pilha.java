@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 /*
-* Autores : Guilherme Deconto e Gustavo Possebon
+* Autores : Guilherme Deconto
 */
 
 public class Pilha {

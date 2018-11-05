@@ -3,7 +3,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 /*
- * Autores : Guilherme Deconto e Gustavo Possebon
+ * Autores : Guilherme Deconto
  */
 
 public class Escritor {
